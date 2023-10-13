@@ -2,6 +2,8 @@ import argparse
 import gc
 import os
 import warnings
+import time
+
 
 import numpy as np
 import torch
@@ -165,7 +167,10 @@ def cli():
         audio = load_audio(audio_path)
         # >> VAD & ASR
         print(">>Performing transcription...")
+        start_time = time.time()
         result = model.transcribe(audio, batch_size=batch_size, chunk_size=chunk_size, print_progress=print_progress)
+        end_time = time.time()
+        print(f"Transcription time: {end_time - start_time} seconds")
         results.append((result, audio_path))
 
     # Unload Whisper and VAD

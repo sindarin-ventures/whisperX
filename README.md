@@ -1,4 +1,22 @@
 <h1 align="center">WhisperX</h1>
+<h2 align="center">Build & Run Docker</h2>
+
+To build the Docker image, navigate to the project root directory and run:
+
+```bash
+docker build -t whisperx_image .
+```
+
+To run the Docker container, use the following command:
+
+```bash
+docker run --gpus all  -it --rm whisperx_image bash
+
+whisperx "examples/persona_64d32085c54526c4feef5938_83c8346c-c1cb-4580-917f-70570e3721cd-1691558140687-combined.wav" --language en --compute_type int8 --batch_size 1 --model medium.en --initial_prompt "Testing"
+```
+
+This will start the WhisperX application inside a Docker container.
+
 
 <p align="center">
   <a href="https://github.com/m-bain/whisperX/stargazers">
