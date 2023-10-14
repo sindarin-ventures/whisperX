@@ -12,7 +12,7 @@ To run the Docker container, use the following command:
 ```bash
 docker run --gpus all  -it --rm whisperx_image bash
 
-whisperx "examples/persona_64d32085c54526c4feef5938_83c8346c-c1cb-4580-917f-70570e3721cd-1691558140687-combined.wav" --language en --compute_type int8 --batch_size 1 --model medium.en --initial_prompt "Testing"
+whisperx "examples/persona_64d32085c54526c4feef5938_83c8346c-c1cb-4580-917f-70570e3721cd-1691558140687-combined.wav" --language en --compute_type int8 --batch_size 1 --model medium.en --initial_prompt "Testing" --beam_size 2 --print_progress True
 ```
 
 This will start the WhisperX application inside a Docker container.
